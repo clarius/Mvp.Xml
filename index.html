@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Mvp.Xml/assets/css/style.css?v=2a5b89cc23b9a2b818faf5bde7374d0a4b4a6f8b">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mvp.Xml</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Mvp.Xml" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Mvp.Xml" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mvp.Xml" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Mvp.Xml","name":"Mvp.Xml","url":"/Mvp.Xml/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/Mvp.Xml/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/devlooped/Mvp.Xml">View on GitHub</a>
+          
+
+          <h1 id="project_title">Mvp.Xml</h1>
+          <h2 id="project_tagline"></h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1><img src="/Mvp.Xml/assets/img/logo.png" alt="Icon" /></h1>
+
+<p><a href="https://www.nuget.org/packages/Mvp.Xml"><img src="https://img.shields.io/nuget/vpre/Mvp.Xml.svg?color=royalblue" alt="Version" /></a>
+<a href="https://www.nuget.org/packages/Mvp.Xml"><img src="https://img.shields.io/nuget/dt/Mvp.Xml.svg?color=green" alt="Downloads" /></a>
+<a href="https://github.com//devlooped/Mvp.Xml/blob/main/license.txt"><img src="https://img.shields.io/github/license/devlooped/Mvp.Xml.svg?color=blue" alt="License" /></a>
+<a href="https://github.com/devlooped/Mvp.Xml/actions"><img src="https://github.com/devlooped/Mvp.Xml/workflows/build/badge.svg?branch=main" alt="Build" /></a></p>
+
+<!-- #intro -->
+<p>The original Mvp.Xml project, developed by Microsoft MVP’s in XML technologies and XML Web Services worldwide. 
+It is aimed at supplementing .NET XML processing. All the project’s classes contain extensive tests to ensure 
+its quality, as well as the peer review among this highly focused group of XML lovers.</p>
+
+<p>Mvp.Xml project currently provides .NET implementations of <a href="http://www.exslt.org/">EXSLT</a>, <a href="http://www.w3.org/TR/xmlbase/">XML Base</a>, 
+<a href="http://www.w3.org/TR/xinclude/">XInclude</a>, <a href="http://www.w3.org/TR/xptr-framework/">XPointer</a> as well as a unique set of utility classes 
+and tools making XML programming in .NET platform easier, more productive and effective.
+<!-- #intro -->
+<!-- include https://github.com/devlooped/.github/raw/main/osmf.md --></p>
+<h2 id="open-source-maintenance-fee">Open Source Maintenance Fee</h2>
+
+<p>To ensure the long-term sustainability of this project, users of this package who generate 
+revenue must pay an <a href="https://opensourcemaintenancefee.org">Open Source Maintenance Fee</a>. 
+While the source code is freely available under the terms of the <a href="/Mvp.Xml/license.txt">License</a>, 
+this package and other aspects of the project require <a href="/Mvp.Xml/osmfeula.txt">adherence to the Maintenance Fee</a>.</p>
+
+<p>To pay the Maintenance Fee, <a href="https://github.com/sponsors/devlooped">become a Sponsor</a> at the proper 
+OSMF tier. A single fee covers all of <a href="https://www.nuget.org/profiles/Devlooped">Devlooped packages</a>.</p>
+
+<!-- https://github.com/devlooped/.github/raw/main/osmf.md -->
+<!-- #content -->
+<h2 id="exslt">EXSLT</h2>
+
+<p>Example usage of <a href="http://www.exslt.org/">EXSLT</a>:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">xslt</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MvpXslTransform</span><span class="p">();</span>
+<span class="n">xslt</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="s">"foo.xsl"</span><span class="p">);</span>
+<span class="c1">// Optionally enforce the output to be XHTML</span>
+<span class="n">xslt</span><span class="p">.</span><span class="n">EnforceXHTMLOutput</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="n">xslt</span><span class="p">.</span><span class="nf">Transform</span><span class="p">(</span><span class="k">new</span> <span class="nf">XmlInput</span><span class="p">(</span><span class="s">"foo.xml"</span><span class="p">),</span> <span class="k">new</span> <span class="nf">XmlOutput</span><span class="p">(</span><span class="s">"result.html"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Usage in XPath-only context:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">XPathExpression</span> <span class="n">expr</span> <span class="p">=</span> <span class="n">nav</span><span class="p">.</span><span class="nf">Compile</span><span class="p">(</span><span class="s">"set:distinct(//author)"</span><span class="p">);</span>
+<span class="n">expr</span><span class="p">.</span><span class="nf">SetContext</span><span class="p">(</span><span class="k">new</span> <span class="nf">ExsltContext</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">NameTable</span><span class="p">));</span>
+<span class="n">XPathNodeIterator</span> <span class="n">authors</span> <span class="p">=</span> <span class="n">nav</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">authors</span><span class="p">.</span><span class="nf">MoveNext</span><span class="p">())</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">authors</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="xinclude">XInclude</h2>
+
+<p>Example usage of <a href="http://www.w3.org/TR/xinclude/">XInclude</a>:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XIncludingReader</span><span class="p">(</span><span class="n">XmlReader</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">uri</span><span class="p">));</span>
+<span class="kt">var</span> <span class="n">document</span> <span class="p">=</span> <span class="n">XDocument</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="miscelaneous">Miscelaneous</h2>
+
+<p>Some other helper classes include:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">XPathNodeIterator</span> <span class="nf">GetExpensiveBooks</span><span class="p">(</span><span class="n">IXPathNavigable</span> <span class="n">doc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minPrice</span><span class="p">)</span>
+<span class="p">{</span>
+ <span class="kt">string</span> <span class="n">expr</span> <span class="p">=</span> <span class="s">"//mvp:titles[mvp:price &gt; $price]"</span><span class="p">;</span>
+ 
+ <span class="c1">// XPathCache optimally caches the compiled XPath expression and parameterizes it</span>
+ <span class="k">return</span> <span class="n">XPathCache</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">doc</span><span class="p">.</span><span class="nf">CreateNavigator</span><span class="p">(),</span> <span class="n">mgr</span><span class="p">,</span> <span class="k">new</span> <span class="nf">XPathVariable</span><span class="p">(</span><span class="s">"price"</span><span class="p">,</span> <span class="n">minPrice</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">xslt</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XslTransform</span><span class="p">();</span>
+<span class="n">xslt</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="s">"print_root.xsl"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">doc</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XPathDocument</span><span class="p">(</span><span class="s">"library.xml"</span><span class="p">);</span>
+ 
+<span class="kt">var</span> <span class="n">books</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="nf">CreateNavigator</span><span class="p">().</span><span class="nf">Select</span><span class="p">(</span><span class="s">"/library/book"</span><span class="p">);</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">books</span><span class="p">.</span><span class="nf">MoveNext</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// Transform subtree for current node</span>
+    <span class="n">xslt</span><span class="p">.</span><span class="nf">Transform</span><span class="p">(</span><span class="k">new</span> <span class="nf">SubtreeeXPathNavigator</span><span class="p">(</span><span class="n">books</span><span class="p">.</span><span class="n">Current</span><span class="p">),</span> <span class="k">null</span><span class="p">,</span> <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<!-- #content -->
+<!-- include https://github.com/devlooped/sponsors/raw/main/footer.md -->
+<h1 id="sponsors">Sponsors</h1>
+
+<!-- sponsors.md -->
+<p><a href="https://github.com/clarius"><img src="https://avatars.githubusercontent.com/u/71888636?v=4&amp;s=39" alt="Clarius Org" title="Clarius Org" /></a>
+<a href="https://github.com/MFB-Technologies-Inc"><img src="https://avatars.githubusercontent.com/u/87181630?v=4&amp;s=39" alt="MFB Technologies, Inc." title="MFB Technologies, Inc." /></a>
+<a href="https://github.com/sandrock"><img src="https://avatars.githubusercontent.com/u/321868?u=99e50a714276c43ae820632f1da88cb71632ec97&amp;v=4&amp;s=39" alt="SandRock" title="SandRock" /></a>
+<a href="https://github.com/drivenet"><img src="https://avatars.githubusercontent.com/u/15047123?v=4&amp;s=39" alt="DRIVE.NET, Inc." title="DRIVE.NET, Inc." /></a>
+<a href="https://github.com/Keflon"><img src="https://avatars.githubusercontent.com/u/16598898?u=64416b80caf7092a885f60bb31612270bffc9598&amp;v=4&amp;s=39" alt="Keith Pickford" title="Keith Pickford" /></a>
+<a href="https://github.com/tbolon"><img src="https://avatars.githubusercontent.com/u/127185?u=7f50babfc888675e37feb80851a4e9708f573386&amp;v=4&amp;s=39" alt="Thomas Bolon" title="Thomas Bolon" /></a>
+<a href="https://github.com/kfrancis"><img src="https://avatars.githubusercontent.com/u/67574?u=3991fb983e1c399edf39aebc00a9f9cd425703bd&amp;v=4&amp;s=39" alt="Kori Francis" title="Kori Francis" /></a>
+<a href="https://github.com/rbnswartz"><img src="https://avatars.githubusercontent.com/u/724704?u=2076fe336f9f6ad678009f1595cbea434b0c5a41&amp;v=4&amp;s=39" alt="Reuben Swartz" title="Reuben Swartz" /></a>
+<a href="https://github.com/jfoshee"><img src="https://avatars.githubusercontent.com/u/480334?v=4&amp;s=39" alt="Jacob Foshee" title="Jacob Foshee" /></a>
+<a href="https://github.com/eajhnsn1"><img src="https://avatars.githubusercontent.com/u/33566379?u=bf62e2b46435a267fa246a64537870fd2449410f&amp;v=4&amp;s=39" alt="" title="&quot;)](https://github.com/Mrxx99)
+[![Eric Johnson](https://avatars.githubusercontent.com/u/26369281?u=41b560c2bc493149b32d384b960e0948c78767ab&amp;v=4&amp;s=39 &quot;Eric Johnson" /></a>
+<a href="https://github.com/Jonathan-Hickey"><img src="https://avatars.githubusercontent.com/u/5510103?u=98dcfbef3f32de629d30f1f418a095bf09e14891&amp;v=4&amp;s=39" alt="Jonathan " title="Jonathan " /></a>
+<a href="https://github.com/KenBonny"><img src="https://avatars.githubusercontent.com/u/6417376?u=569af445b6f387917029ffb5129e9cf9f6f68421&amp;v=4&amp;s=39" alt="Ken Bonny" title="Ken Bonny" /></a>
+<a href="https://github.com/SimonCropp"><img src="https://avatars.githubusercontent.com/u/122666?v=4&amp;s=39" alt="Simon Cropp" title="Simon Cropp" /></a>
+<a href="https://github.com/agileworks-eu"><img src="https://avatars.githubusercontent.com/u/5989304?v=4&amp;s=39" alt="agileworks-eu" title="agileworks-eu" /></a>
+<a href="https://github.com/arsdragonfly"><img src="https://avatars.githubusercontent.com/u/4067473?v=4&amp;s=39" alt="Zheyu Shen" title="Zheyu Shen" /></a>
+<a href="https://github.com/vezel-dev"><img src="https://avatars.githubusercontent.com/u/87844133?v=4&amp;s=39" alt="Vezel" title="Vezel" /></a>
+<a href="https://github.com/ChilliCream"><img src="https://avatars.githubusercontent.com/u/16239022?v=4&amp;s=39" alt="ChilliCream" title="ChilliCream" /></a>
+<a href="https://github.com/4OTC"><img src="https://avatars.githubusercontent.com/u/68428092?v=4&amp;s=39" alt="4OTC" title="4OTC" /></a>
+<a href="https://github.com/DominicSchell"><img src="https://avatars.githubusercontent.com/u/66068846?u=0a5c5e2e7d90f15ea657bc660f175605935c5bea&amp;v=4&amp;s=39" alt="domischell" title="domischell" /></a>
+<a href="https://github.com/adalon"><img src="https://avatars.githubusercontent.com/u/2027083?u=129cf516d99f5cb2fd0f4a0787a069f3446b7522&amp;v=4&amp;s=39" alt="Adrian Alonso" title="Adrian Alonso" /></a>
+<a href="https://github.com/torutek"><img src="https://avatars.githubusercontent.com/u/33917059?v=4&amp;s=39" alt="torutek" title="torutek" /></a>
+<a href="https://github.com/mccaffers"><img src="https://avatars.githubusercontent.com/u/16667079?u=c0daa64bb5c1b572130e05ae2b6f609ecc912d4d&amp;v=4&amp;s=39" alt="Ryan McCaffery" title="Ryan McCaffery" /></a>
+<a href="https://github.com/SeikaLogiciel"><img src="https://avatars.githubusercontent.com/u/2564602?v=4&amp;s=39" alt="Seika Logiciel" title="Seika Logiciel" /></a>
+<a href="https://github.com/wizardness"><img src="https://avatars.githubusercontent.com/devlooped-user?s=39" alt="Andrew Grant" title="Andrew Grant" /></a>
+<a href="https://github.com/eska-gmbh"><img src="https://avatars.githubusercontent.com/devlooped-team?s=39" alt="eska-gmbh" title="eska-gmbh" /></a>
+<a href="https://github.com/geodata-no"><img src="https://avatars.githubusercontent.com/u/5946299?v=4&amp;s=39" alt="Geodata AS" title="Geodata AS" /></a></p>
+
+<!-- sponsors.md -->
+<p><a href="https://github.com/sponsors/devlooped"><img src="https://avatars.githubusercontent.com/devlooped-sponsor?s=118" alt="Sponsor this project" title="Sponsor this project" /></a></p>
+
+<p><a href="https://github.com/sponsors">Learn more about GitHub Sponsors</a></p>
+
+<!-- https://github.com/devlooped/sponsors/raw/main/footer.md -->
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Mvp.Xml maintained by <a href="https://github.com/devlooped">devlooped</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
